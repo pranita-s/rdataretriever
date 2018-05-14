@@ -1,7 +1,6 @@
 language: r
 cache: packages
 sudo: required
-dist: xenial
 warnings_are_errors: false
 r_packages:
   - covr
