@@ -1,10 +1,13 @@
 context("regression tests")
 
-library(DBI)
-library(RPostgreSQL)
-#library(RMySQL)
-library(RSQLite)
-library(reticulate)
+if (!requireNamespace("reticulate", quietly = TRUE)) {
+  return()
+}
+suppressPackageStartupMessages(require(reticulate))
+suppressPackageStartupMessages(require(DBI))
+# suppressPackageStartupMessages(require(RMariaDB))
+suppressPackageStartupMessages(require(RPostgreSQL))
+suppressPackageStartupMessages(require(RSQLite))
 
 
 test_that("datasets returns some known values", {
@@ -113,9 +116,9 @@ test_that("Install dataset into Postgres", {
 #     ignore.stderr = TRUE
 #   ))
 #   portal <- c("main", "plots", "species")
-#   rdataretriever::install_mysql('portal',database_name = 'testdb')
+#   rdataretriever::install_mysql('portal', database_name = 'testdb')
 #   con <- dbConnect(
-#     RMySQL::MySQL(),
+#     RMariaDB::MariaDB(),
 #     user = 'travis',
 #     host = 'localhost',
 #     password = '',
@@ -126,6 +129,7 @@ test_that("Install dataset into Postgres", {
 #   dbDisconnect(con)
 #   expect_setequal(result, portal)
 # })
+
 
 test_that("Install portal into sqlite", {
   # Install the portal into Sqlite
@@ -138,6 +142,7 @@ test_that("Install portal into sqlite", {
   all_tables_installed = all(portal %in% result)
   expect_true(all_tables_installed)
 })
+
 
 test_that("Install and load a dataset as a list", {
   portal_data <- c("main", "plots", "species")

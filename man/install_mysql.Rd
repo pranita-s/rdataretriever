@@ -33,6 +33,6 @@ Data is stored in MySQL database
 }
 \examples{
 \donttest{
-rdataretriever :: install_mysql(dataset = 'portal', user='postgres', password='abcdef')
+rdataretriever :: install_mysql(dataset='portal', user='postgres', password='abcdef')
 }
 }

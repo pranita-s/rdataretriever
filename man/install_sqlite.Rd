@@ -10,7 +10,7 @@ install_sqlite(dataset, file = "sqlite.db", table_name = "{db}_{table}",
 \arguments{
 \item{dataset}{the name of the dataset that you wish to install}
 
-\item{file}{file name for database}
+\item{file}{Sqlite database file name or path}
 
 \item{table_name}{table name for installing of dataset}
 
@@ -22,7 +22,7 @@ install_sqlite(dataset, file = "sqlite.db", table_name = "{db}_{table}",
 Data is stored in SQLite database
 }
 \examples{
-#' \donttest{
-rdataretriever :: install_sqlite(dataset = 'iris', file = 'sqlite.db',debug=FALSE, use_cache=TRUE)
+\donttest{
+rdataretriever::install_sqlite(dataset='iris', file='sqlite.db', debug=FALSE, use_cache=TRUE)
 }
 }

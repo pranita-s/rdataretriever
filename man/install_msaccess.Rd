@@ -22,7 +22,7 @@ install_msaccess(dataset, file = "access.mdb",
 Data is stored in MSAccess database
 }
 \examples{
-#' \donttest{
-rdataretriever :: install_msaccess(dataset = 'iris', file = 'sqlite.db',debug=FALSE, use_cache=TRUE)
+\donttest{
+rdataretriever::install_msaccess(dataset='iris', file='sqlite.db',debug=FALSE, use_cache=TRUE)
 }
 }

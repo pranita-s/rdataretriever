@@ -70,3 +70,4 @@ script:
   - R -e 'library(testthat)'
   - R -e 'rdataretriever::get_updates()'
   - R -e 'library(reticulate); rt <- import("retriever"); rdataretriever::datasets()'
+  - R -e 'library(devtools);devtools::test()'

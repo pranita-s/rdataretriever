@@ -20,7 +20,9 @@ install_postgres(dataset, user = "postgres", password = "",
 
 \item{port}{port number for connection}
 
-\item{database_name}{database name in which dataset will be installed}
+\item{database}{the database name default is postres}
+
+\item{database_name}{database schema name in which dataset will be installed}
 
 \item{table_name}{table name specified especially for datasets
 containing one file}
@@ -34,6 +36,6 @@ Data is stored in PostgreSQL database
 }
 \examples{
 \donttest{
-rdataretriever :: install_postgres(dataset = 'portal', user='postgres', password='abcdef')
+rdataretriever::install_postgres(dataset='portal', user='postgres', password='abcdef')
 }
 }
